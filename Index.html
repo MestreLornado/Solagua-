@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLÁGUA: projeto educacional sobre física moderna, energia solar, piscinas inteligentes e robótica.">
+  <meta name="theme-color" content="#071a2b">
+  <title>SOLÁGUA | Ciência, Energia e Tecnologia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="reading-progress"></div>
+
+  <header class="header">
+    <a href="#inicio" class="logo">SOLÁGUA<span>.</span></a>
+
+    <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="main-nav">
+      <a href="#inicio">Início</a>
+      <a href="#fisica">Física moderna</a>
+      <a href="#energia">Energia solar</a>
+      <a href="#simuladores">Simuladores</a>
+      <a href="#robotica">Robótica</a>
+      <a href="#projeto">Projeto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">CIÊNCIA • ENERGIA • TECNOLOGIA</span>
+        <h1>O futuro da energia começa com a <span>ciência.</span></h1>
+        <p>
+          Explore a física moderna, entenda a radiação e descubra
+          como a tecnologia pode transformar piscinas em sistemas inteligentes.
+        </p>
+        <div class="hero-actions">
+          <a href="#simuladores" class="button primary">Explorar simuladores</a>
+          <a href="#fisica" class="button secondary">Conhecer o projeto</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Ilustração de uma piscina com energia solar">
+        <div class="sun"></div>
+        <div class="pool-visual">
+          <div class="water"></div>
+          <div class="solar-panel"></div>
+        </div>
+        <div class="visual-label">ENERGIA INTELIGENTE</div>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <span class="eyebrow">NOSSA PROPOSTA</span>
+      <h2>Conhecimento aplicado à realidade</h2>
+      <p>
+        O SOLÁGUA integra programação, física moderna e robótica
+        para demonstrar como conceitos científicos podem ser aplicados
+        em soluções tecnológicas para o aquecimento e monitoramento de piscinas.
+      </p>
+    </section>
+
+    <section id="fisica" class="section dark-section">
+      <span class="eyebrow">01 — TECNOCIÊNCIA</span>
+      <h2>Os fundamentos da física moderna</h2>
+
+      <div class="cards">
+        <article class="info-card">
+          <div class="card-icon">☀</div>
+          <h3>Radiação eletromagnética</h3>
+          <p>
+            A energia pode se propagar pelo espaço por meio de ondas
+            eletromagnéticas, como a luz visível e o infravermelho.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">◉</div>
+          <h3>Corpo negro</h3>
+          <p>
+            Um corpo negro é um modelo ideal que absorve toda a radiação
+            incidente e emite energia conforme sua temperatura.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">⚛</div>
+          <h3>Efeito fotoelétrico</h3>
+          <p>
+            Ocorre quando a luz transfere energia aos elétrons de um material,
+            podendo provocar sua emissão.
+          </p>
+        </article>
+      </div>
+
+      <div class="explanation">
+        <h3>Por que isso importa?</h3>
+        <p>
+          A energia solar chega à Terra por radiação eletromagnética.
+          Compreender como a luz interage com a matéria ajuda a explicar
+          tecnologias como painéis solares e sistemas de aquecimento.
+        </p>
+      </div>
+    </section>
+
+    <section id="energia" class="section">
+      <span class="eyebrow">02 — ENERGIA SOLAR</span>
+      <h2>Duas formas de aproveitar a luz do Sol</h2>
+
+      <div class="comparison">
+        <article class="comparison-card">
+          <h3>Energia solar térmica</h3>
+          <p>
+            Utiliza a radiação solar para aquecer diretamente um fluido,
+            como a água de uma piscina.
+          </p>
+          <span class="tag">Aquecimento</span>
+        </article>
+
+        <article class="comparison-card">
+          <h3>Energia solar fotovoltaica</h3>
+          <p>
+            Converte a energia da luz em energia elétrica por meio
+            de células fotovoltaicas.
+          </p>
+          <span class="tag">Eletricidade</span>
+        </article>
+      </div>
+
+      <div class="explanation">
+        <h3>Aplicação no projeto</h3>
+        <p>
+          O aquecimento solar térmico pode reduzir a necessidade de
+          equipamentos elétricos convencionais para aquecer a piscina.
+          Sensores podem acompanhar as condições da água.
+        </p>
+      </div>
+    </section>
+
+    <section id="simuladores" class="section dark-section">
+      <span class="eyebrow">03 — LABORATÓRIO INTERATIVO</span>
+      <h2>Experimente os conceitos</h2>
+      <p class="section-description">
+        Modifique os parâmetros e observe como os resultados mudam.
+      </p>
+
+      <div class="simulator-grid">
+
+        <article class="simulator">
+          <h3>Radiação do corpo negro</h3>
+          <p>
+            Altere a temperatura e observe a mudança na emissão de radiação.
+          </p>
+
+          <label for="blackbody-temperature">Temperatura (Kelvin)</label>
+          <input id="blackbody-temperature" type="range"
+            min="1000" max="10000" step="100" value="5800">
+
+          <output id="blackbody-temperature-value">5800 K</output>
+
+          <canvas id="blackbody-chart" width="600" height="300"
+            aria-label="Gráfico da intensidade da radiação em função do comprimento de onda">
+          </canvas>
+
+          <div class="result-grid">
+            <div>
+              <small>Pico de emissão</small>
+              <strong id="blackbody-peak">—</strong>
+            </div>
+            <div>
+              <small>Potência emitida</small>
+              <strong id="blackbody-power">—</strong>
+            </div>
+          </div>
+
+          <p class="note">
+            Modelo baseado nas leis de Planck, Wien e Stefan-Boltzmann.
+          </p>
+        </article>
+
+        <article class="simulator">
+          <h3>Aquecimento da piscina</h3>
+          <p>
+            Simule o aumento idealizado da temperatura da água
+            pela energia solar.
+          </p>
+
+          <form id="pool-form">
+            <label for="pool-volume">Volume da piscina (m³)</label>
+            <input id="pool-volume" type="number" min="1" value="30" required>
+
+            <label for="pool-initial-temperature">Temperatura inicial (°C)</label>
+            <input id="pool-initial-temperature" type="number"
+              value="22" required>
+
+            <label for="pool-solar-energy">Potência solar recebida (W)</label>
+            <input id="pool-solar-energy" type="number"
+              min="0" value="5000" required>
+
+            <label for="pool-hours">Tempo de exposição (horas)</label>
+            <input id="pool-hours" type="number"
+              min="0" value="5" required>
+
+            <button class="button primary" type="submit">Calcular</button>
+          </form>
+
+          <div id="pool-result" class="result" aria-live="polite">
+            Preencha os campos e clique em calcular.
+          </div>
+        </article>
+
+        <article class="simulator">
+          <h3>Efeito fotoelétrico</h3>
+          <p>
+            Altere a frequência da luz e a função trabalho
+            para observar a emissão de elétrons.
+          </p>
+
+          <form id="photoelectric-form">
+            <label for="light-frequency">Frequência da luz (×10¹⁴ Hz)</label>
+            <input id="light-frequency" type="range"
+              min="1" max="20" step="0.1" value="10">
+
+            <output id="light-frequency-value">10 × 10¹⁴ Hz</output>
+
+            <label for="work-function">Função trabalho (eV)</label>
+            <input id="work-function" type="number"
+              min="0" max="10" step="0.1" value="2.3">
+
+            <button class="button primary" type="submit">Simular</button>
+          </form>
+
+          <div id="photoelectric-result" class="result" aria-live="polite">
+            Ajuste os parâmetros para simular o efeito.
+          </div>
+        </article>
+
+        <article class="simulator">
+          <h3>Piscina inteligente</h3>
+          <p>
+            Simule sensores que acompanham a temperatura, o pH
+            e o nível de água.
+          </p>
+
+          <form id="sensor-form">
+            <label for="sensor-temperature">Temperatura (°C)</label>
+            <input id="sensor-temperature" type="number"
+              value="27" step="0.1" required>
+
+            <label for="sensor-ph">pH da água</label>
+            <input id="sensor-ph" type="number"
+              min="0" max="14" step="0.1" value="7.4" required>
+
+            <label for="sensor-level">Nível de água (%)</label>
+            <input id="sensor-level" type="number"
+              min="0" max="100" value="80" required>
+
+            <button class="button primary" type="submit">
+              Verificar sensores
+            </button>
+          </form>
+
+          <div id="sensor-result" class="result" aria-live="polite">
+            Informe os valores para verificar o sistema.
+          </div>
+
+          <p class="note">
+            Simulação didática. Não substitui instrumentos reais de medição.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="robotica" class="section">
+      <span class="eyebrow">04 — ROBÓTICA</span>
+      <h2>Uma piscina conectada</h2>
+      <p class="section-description">
+        A robótica permite transformar medições em informações
+        e ações automatizadas.
+      </p>
+
+      <div class="cards">
+        <article class="info-card">
+          <div class="card-icon">🌡</div>
+          <h3>Sensor de temperatura</h3>
+          <p>
+            Mede a temperatura da água e permite acompanhar
+            seu aquecimento.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">◉</div>
+          <h3>Sensor de pH</h3>
+          <p>
+            Ajuda a monitorar a acidez ou alcalinidade da água.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon">↕</div>
+          <h3>Sensor de nível</h3>
+          <p>
+            Identifica mudanças no nível da água e pode alertar
+            quando estiver baixo.
+          </p>
+        </article>
+      </div>
+
+      <div class="explanation">
+        <h3>Protótipo sugerido</h3>
+        <p>
+          Um Arduino pode receber informações de sensores e enviar
+          os dados para uma tela ou sistema de monitoramento.
+          Para uma demonstração escolar, os sensores podem ser
+          representados inicialmente por valores simulados.
+        </p>
+        <pre><code>INÍCIO
+  Ler temperatura
+  Ler pH
+  Ler nível da água
+
+  Se temperatura estiver baixa:
+      Exibir alerta de temperatura
+
+  Se pH estiver fora da faixa:
+      Exibir alerta de pH
+
+  Se nível estiver baixo:
+      Exibir alerta de abastecimento
+FIM</code></pre>
+      </div>
+    </section>
+
+    <section id="projeto" class="section dark-section">
+      <span class="eyebrow">05 — IMPACTO E ACESSIBILIDADE</span>
+      <h2>Tecnologia com propósito</h2>
+
+      <div class="cards">
+        <article class="info-card">
+          <h3>Eficiência energética</h3>
+          <p>
+            O aproveitamento da energia solar pode diminuir
+            o consumo de energia convencional.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Automação</h3>
+          <p>
+            Sensores permitem acompanhar condições importantes
+            da piscina.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Acessibilidade</h3>
+          <p>
+            Uma interface acessível amplia o acesso ao conhecimento
+            e à tecnologia.
+          </p>
+        </article>
+      </div>
+
+      <div class="accessibility">
+        <h3>Personalize a leitura</h3>
+        <button id="decrease-font" class="button secondary">A− Diminuir texto</button>
+        <button id="increase-font" class="button secondary">A+ Aumentar texto</button>
+        <button id="toggle-contrast" class="button secondary"
+          aria-pressed="false">Alto contraste</button>
+      </div>
+
+      <div class="explanation">
+        <h3>Referências para estudo</h3>
+        <ul>
+          <li>
+            <a href="https://phet.colorado.edu/pt_BR/" target="_blank" rel="noopener">
+              PhET — Simulações interativas
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nasa.gov/" target="_blank" rel="noopener">
+              NASA — Ciência e exploração espacial
+            </a>
+          </li>
+          <li>
+            <a href="https://www.arduino.cc/" target="_blank" rel="noopener">
+              Arduino — Documentação oficial
+            </a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">
+              W3C WAI — Diretrizes de acessibilidade
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="#inicio" class="logo">SOLÁGUA<span>.</span></a>
+    <p>Ciência, energia e tecnologia a serviço de um futuro melhor.</p>
+    <p>© <span id="current-year"></span> — Projeto educacional.</p>
+  </footer>
+
+</body>
+</html>
